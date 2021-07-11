@@ -7,11 +7,11 @@ This package is to detect scroll event
 ## Installation
 
 ```bash
-yarn add @ashalfarhan/use-scroll
+yarn add @ashalfarhan/hooks
 
 #or
 
-npm install @ashalfarhan/use-scroll --save
+npm install @ashalfarhan/hooks --save
 ```
 
 ## Docs
@@ -41,7 +41,7 @@ const { scrolling, scrollBottom, scrollTop } = useScroll();
 ## Usage
 
 ```tsx
-import useScroll from '@ashalfarhan/use-scroll';
+import useScroll from '@ashalfarhan/hooks';
 
 const MyComponent = () => {
   const { scrolling, scrollBottom, scrollTop } = useScroll();
