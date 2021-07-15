@@ -1,10 +1,8 @@
-# React hooks useScroll
+# Minimal React Hooks
 
-## Description
+## 📦 Installation
 
-This package is to detect scroll event
-
-## Installation
+---
 
 ```bash
 yarn add @ashalfarhan/hooks
@@ -14,7 +12,11 @@ yarn add @ashalfarhan/hooks
 npm install @ashalfarhan/hooks --save
 ```
 
-## Docs
+## 🔧 Guide
+
+---
+
+### 💻 useScroll
 
 ```tsx
 const { scrolling, scrollBottom, scrollTop } = useScroll();
@@ -22,43 +24,86 @@ const { scrolling, scrollBottom, scrollTop } = useScroll();
 
 - scrolling
 
-  Return `boolean`
-
-  Detect scrolling to bottom event
+  > Type `boolean`
+  >
+  > Detect scrolling to bottom event
 
 - scrollBottom
 
-  Return `boolean`
-
-  Same as `scrolling`
+  > Type `boolean`
+  >
+  > Same as `scrolling`
 
 - scrollTop
 
-  Return `boolean`
+  > Type `boolean`
+  >
+  > Detect scrolling to top event
 
-  Detect scrolling to top event
-
-## Usage
+### 🍳 useFetch
 
 ```tsx
-import useScroll from '@ashalfarhan/hooks';
-
-const MyComponent = () => {
-  const { scrolling, scrollBottom, scrollTop } = useScroll();
-  return (
-    <div style={{ minHeight: '200vh' }}>
-      <header style={{ display: scrolling ? 'none' : 'block' }}>
-        My Header
-      </header>
-    </div>
-  );
-};
-
-export default MyComponent;
+const { result, status, error, loading, success } = useFetch('https://jsonplaceholder.typicode.com/posts');
 ```
 
-## Compatibility
+- result
 
-- SSG
-- CSR
-- SSR
+  > `any`
+  >
+  > Result of the fetch
+  >
+  > Note: Cast with generic parameter if you want to infer the type
+
+- status
+
+  > `loading` | `success` | `error` | `idle`
+  >
+  > Fetching status
+
+- error
+
+  > `null` | `Error` | `any`
+
+- success and loading
+
+  > `boolean`
+  >
+  > `true` If it is
+
+### 🧲 useToggle
+
+```tsx
+const { open, onToggle, onOpen, onClose, onSwitch } = useToggle();
+```
+
+- open
+
+  > `boolean`
+  >
+  > Current state of toggle
+  >
+  > Note: Initially false, to change the initial state pass `true` to the `useToggle` parameter
+
+- onToggle
+
+  > `function`
+  >
+  > Function to toggle the state
+
+- onClose
+
+  > `function`
+  >
+  > Function to set the state to `false`
+
+- onOpen
+
+  > `function`
+  >
+  > Function to set the state to `true`
+
+- onSwitch
+
+  > `function`
+  >
+  > Function to set the state to the param that passed in
