@@ -12,7 +12,7 @@ import { UseFetchReturn, UseFetchOptions, UseFetchState } from './types';
  * @returns {boolean} error - Null if the fetch success
  * @returns {boolean} status - Fetch Status
  * @returns {any} result - Fetch Result
- * @see https://github.com/ashalfarhan/hooks#readme
+ * @see https://github.com/ashalfarhan/hooks#-usefetch
  *
  */
 

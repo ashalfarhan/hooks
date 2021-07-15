@@ -10,7 +10,7 @@ import { useCallback, useState } from 'react';
  * @returns {() => void} onOpen - Set toggle internal state to true
  * @returns {() => void} onClose - Set toggle internal state to false
  * @returns {Function} onSwitch - Set toggle internal state with payload
- * @see https://github.com/ashalfarhan/hooks#readme
+ * @see https://github.com/ashalfarhan/hooks#-usetoggle
  *
  */
 const useToggle = (initial = false) => {

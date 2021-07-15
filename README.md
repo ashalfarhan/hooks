@@ -1,5 +1,7 @@
 # Minimal React Hooks
 
+> Just a simple React Hooks
+
 ## 📦 Installation
 
 ---
