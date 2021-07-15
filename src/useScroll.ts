@@ -7,7 +7,7 @@ import * as React from 'react';
  * @returns {boolean} scrolling - Detect user scrolling to bottom
  * @returns {boolean} scrollTop - Detect user scrolling to bottom
  * @returns {boolean} scrollBottom  - Detect user scrolling to top
- * @see https://github.com/ashalfarhan/hooks#readme
+ * @see https://github.com/ashalfarhan/hooks#-usescroll
  *
  */
 const useScroll = () => {
