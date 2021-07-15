@@ -8,14 +8,18 @@
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "http://github.com/ashalfarhan/hooks"
+    "url": "http://github.com/ashalfarhan/hooks.git"
   },
   "keywords": [
     "react",
     "react-hooks",
     "hooks",
     "use-scroll",
-    "usescroll"
+    "useScroll",
+    "use-fetch",
+    "useFetch",
+    "useToggle",
+    "use-toggle"
   ],
   "files": [
     "dist",
@@ -30,7 +34,8 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
+    "test:unit": "tsdx test --passWithNoTests",
+    "test:e2e": "cypress run",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -44,12 +49,6 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
   "size-limit": [
     {
       "path": "dist/hooks.cjs.production.min.js",
@@ -62,9 +61,15 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/react-hooks": "^7.0.1",
+    "@testing-library/user-event": "^13.1.9",
     "@types/react": "^17.0.14",
     "@types/react-dom": "^17.0.9",
+    "cypress": "^7.7.0",
     "husky": "^7.0.1",
+    "jest-fetch-mock": "^3.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "size-limit": "^5.0.1",
