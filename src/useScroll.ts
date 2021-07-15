@@ -1,11 +1,14 @@
 import * as React from 'react';
 
 /**
+ *
  * Detect scroll event from user
+ *
  * @returns {boolean} scrolling - Detect user scrolling to bottom
  * @returns {boolean} scrollTop - Detect user scrolling to bottom
  * @returns {boolean} scrollBottom  - Detect user scrolling to top
  * @see https://github.com/ashalfarhan/hooks#readme
+ *
  */
 const useScroll = () => {
   const [scrollTop, setScrollTop] = React.useState(false);
