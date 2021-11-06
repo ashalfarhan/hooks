@@ -19,7 +19,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm install
       - run: npm run build
-      - run: npm run test
+      - run: npm run test:ci
       - name: Publish to NPM
         run: npm publish --access public
         env:
