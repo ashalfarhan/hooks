@@ -12,7 +12,7 @@ describe('useSafeUpdate', () => {
 
     expect(callback).toHaveBeenCalled();
   });
-  
+
   it("shouldn't be called when accidently component unmounted", () => {
     const callback = jest.fn();
     const { result, unmount } = renderHook(useSafeUpdate, {
