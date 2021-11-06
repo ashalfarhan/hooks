@@ -17,61 +17,6 @@ npm install @ashalfarhan/hooks --save
 ## 🔧 Guide
 
 ---
-
-### 💻 useScroll
-
-```tsx
-const { scrolling, scrollBottom, scrollTop } = useScroll();
-```
-
-- scrolling
-
-  > Type `boolean`
-  >
-  > Detect scrolling to bottom event
-
-- scrollBottom
-
-  > Type `boolean`
-  >
-  > Same as `scrolling`
-
-- scrollTop
-
-  > Type `boolean`
-  >
-  > Detect scrolling to top event
-
-### 🍳 useFetch
-
-```tsx
-const { result, status, error, loading, success } = useFetch('https://jsonplaceholder.typicode.com/posts');
-```
-
-- result
-
-  > `any`
-  >
-  > Result of the fetch
-  >
-  > Note: Cast with generic parameter if you want to infer the type
-
-- status
-
-  > `loading` | `success` | `error` | `idle`
-  >
-  > Fetching status
-
-- error
-
-  > `null` | `Error` | `any`
-
-- success and loading
-
-  > `boolean`
-  >
-  > `true` If it is
-
 ### 🧲 useToggle
 
 ```tsx
@@ -109,3 +54,29 @@ const { open, onToggle, onOpen, onClose, onSwitch } = useToggle();
   > `function`
   >
   > Function to set the state to the param that passed in
+
+### 🦺 useSafeUpdate
+
+```tsx
+const [count, setCount] = useState(0)
+const safeSetCount = useSafeUpdate(setCount)
+```
+#### Returns
+ - safeCallback
+    > `function`
+    > 
+    > Function/callback that is safe when you call if your component accidently unmounted.
+
+
+### 🦥 useDebouncedValue
+
+```tsx
+const [searchQuery, setSearchQuery] = useState("")
+const debouncedSearchQuery = useDebouncedValue(searchQuery)
+```
+
+#### Returns
+ - debouncedValue
+    > `T`
+    >
+    > Value that lazily update based on delay argument, default to `200` (in ms)

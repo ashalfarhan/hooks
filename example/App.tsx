@@ -1,16 +1,18 @@
 import * as React from 'react';
-import WithUseFetch from './components/WithUseFetch';
-import WithUseScroll from './components/WithUseScroll';
+import { useDebouncedValue } from '../dist';
 import WithUseToggle from './components/WithUseToggle';
 
 const App = () => {
+  const [count, setCount] = React.useState(0);
+  const debouncedCount = useDebouncedValue(count,1000);
   return (
     <div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <WithUseScroll />
         <WithUseToggle />
       </div>
-      <WithUseFetch />
+
+      <h1>Count: {debouncedCount}</h1>
+      <button onClick={() => setCount(prev => prev + 1)}>Inc</button>
     </div>
   );
 };
