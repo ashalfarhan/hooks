@@ -17,6 +17,7 @@ npm install @ashalfarhan/hooks --save
 ## 🔧 Guide
 
 ---
+
 ### 🧲 useToggle
 
 ```tsx
@@ -58,36 +59,40 @@ const { open, onToggle, onOpen, onClose, onSwitch } = useToggle();
 ### 🦺 useSafeUpdate
 
 ```tsx
-const [count, setCount] = useState(0)
-const safeSetCount = useSafeUpdate(setCount)
+const [count, setCount] = useState(0);
+const safeSetCount = useSafeUpdate(setCount);
 ```
-#### Returns
- - safeCallback
-    > `function`
-    > 
-    > Function/callback that is safe when you call if your component accidently unmounted.
 
+#### Returns
+
+- safeCallback
+  > `function`
+  >
+  > Function/callback that is safe when you call if your component accidently unmounted.
 
 ### 🦥 useDebouncedValue
 
 ```tsx
-const [searchQuery, setSearchQuery] = useState("")
-const debouncedSearchQuery = useDebouncedValue(searchQuery)
+const [searchQuery, setSearchQuery] = useState('');
+const debouncedSearchQuery = useDebouncedValue(searchQuery);
 ```
 
 #### Returns
- - debouncedValue
-    > `T`
-    >
-    > Value that lazily update based on delay argument, default to `200` (in ms)
+
+- debouncedValue
+  > `T`
+  >
+  > Value that lazily update based on delay argument, default to `200` (in ms)
 
 ### 👈 usePreviousValue
+
 ```tsx
-const prevCount = usePrevious(count)
+const prevCount = usePreviousValue(count);
 ```
 
 ### Returns
- - previousValue
-   > `T`
-   >
-   > The prevous value of every render, possibly undefined at first
+
+- previousValue
+  > `T`
+  >
+  > The prevous value of every render, possibly undefined at first

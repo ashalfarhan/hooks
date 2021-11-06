@@ -10,7 +10,6 @@ import { useState } from 'react';
  * @returns onClose - Set toggle internal state to false
  * @returns onSwitch - Set toggle internal state with payload
  * @see https://github.com/ashalfarhan/hooks#-usetoggle
- *
  */
 export function useToggle(initial = false) {
   const [state, setState] = useState(initial);

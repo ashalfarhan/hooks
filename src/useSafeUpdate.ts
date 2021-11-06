@@ -17,7 +17,8 @@ export function useSafeUpdate<T extends AnyFunction>(updater: T) {
     };
   }, []);
 
-  return (...args: Parameters<T>) => {
-    safe.current && updater(...args);
-  };
+  return React.useCallback(
+    (...args: Parameters<T>) => (safe.current ? updater(...args) : void 0),
+    [updater],
+  );
 }

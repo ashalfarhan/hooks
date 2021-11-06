@@ -1,5 +1,7 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, cleanup, renderHook } from '@testing-library/react-hooks';
 import { usePreviousValue } from '../src';
+
+afterEach(cleanup);
 
 describe('usePreviousValue', () => {
   it('should be undefined at first', () => {

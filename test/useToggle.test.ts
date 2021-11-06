@@ -1,5 +1,7 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, cleanup, renderHook } from '@testing-library/react-hooks';
 import { useToggle } from '../src';
+
+afterEach(cleanup);
 
 describe('useToggle hook', () => {
   describe('open value', () => {

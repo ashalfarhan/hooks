@@ -4,7 +4,7 @@ import WithUseToggle from './components/WithUseToggle';
 
 const App = () => {
   const [count, setCount] = React.useState(0);
-  const debouncedCount = useDebouncedValue(count,1000);
+  const debouncedCount = useDebouncedValue(count, 1000);
   return (
     <div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
@@ -12,7 +12,7 @@ const App = () => {
       </div>
 
       <h1>Count: {debouncedCount}</h1>
-      <button onClick={() => setCount(prev => prev + 1)}>Inc</button>
+      <button onClick={() => setCount((prev) => prev + 1)}>Inc</button>
     </div>
   );
 };

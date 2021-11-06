@@ -1,5 +1,7 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, cleanup, renderHook } from '@testing-library/react-hooks';
 import { useDebouncedValue } from '../src';
+
+afterEach(cleanup);
 
 describe('useDebouncedValue', () => {
   it('should given initial value', () => {
@@ -10,11 +12,10 @@ describe('useDebouncedValue', () => {
   });
 
   it('should working properly', async () => {
-    const {
-      rerender,
-      result,
-      waitForNextUpdate,
-    } = renderHook(useDebouncedValue, { initialProps: '' });
+    const { rerender, result, waitForNextUpdate } = renderHook(
+      useDebouncedValue,
+      { initialProps: '' },
+    );
     const expected = 'something';
 
     rerender(expected);

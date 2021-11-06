@@ -1,5 +1,7 @@
-import { act, renderHook } from '@testing-library/react-hooks';
+import { act, cleanup, renderHook } from '@testing-library/react-hooks';
 import { useSafeUpdate } from '../src';
+
+afterEach(cleanup);
 
 describe('useSafeUpdate', () => {
   it('should working properly', () => {
