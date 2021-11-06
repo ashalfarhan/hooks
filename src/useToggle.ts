@@ -1,50 +1,37 @@
-import { useCallback, useState } from 'react';
+import { useState } from 'react';
 
 /**
- *
  * Toggle Hooks
  *
- * @param {boolean} initial - Initial value of toggle internal state
- * @returns {boolean} open - Internal state
- * @returns {() => void} onToggle - Function to toggle internal state
- * @returns {() => void} onOpen - Set toggle internal state to true
- * @returns {() => void} onClose - Set toggle internal state to false
- * @returns {Function} onSwitch - Set toggle internal state with payload
+ * @param initial - Initial value of toggle internal state
+ * @returns open - Internal state
+ * @returns onToggle - Function to toggle internal state
+ * @returns onOpen - Set toggle internal state to true
+ * @returns onClose - Set toggle internal state to false
+ * @returns onSwitch - Set toggle internal state with payload
  * @see https://github.com/ashalfarhan/hooks#-usetoggle
  *
  */
-const useToggle = (initial = false) => {
+export function useToggle(initial = false) {
   const [state, setState] = useState(initial);
 
-  const onToggle = useCallback(() => {
+  const onToggle = () => {
     setState(prev => !prev);
-  }, [setState]);
+  };
 
-  const onOpen = useCallback(() => {
+  const onOpen = () => {
     setState(true);
-  }, [setState]);
+  };
 
-  const onClose = useCallback(() => {
+  const onClose = () => {
     setState(false);
-  }, [setState]);
-
-  const onSwitch = useCallback(
-    (payload: boolean) => {
-      if (typeof payload !== 'boolean') {
-        throw new Error('onSwitch should be called with boolean parameter');
-      }
-      setState(payload);
-    },
-    [setState],
-  );
+  };
 
   return {
     open: state,
     onToggle,
     onOpen,
     onClose,
-    onSwitch,
+    onSwitch: setState,
   };
-};
-
-export default useToggle;
+}

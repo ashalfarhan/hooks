@@ -1,6 +1,6 @@
 {
   "name": "@ashalfarhan/hooks",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
   "main": "dist/index.js",
   "author": "ashalfarhan",
@@ -14,12 +14,12 @@
     "react",
     "react-hooks",
     "hooks",
-    "use-scroll",
-    "useScroll",
-    "use-fetch",
-    "useFetch",
     "useToggle",
-    "use-toggle"
+    "use-toggle",
+    "useSafeUpdate",
+    "use-safe-update",
+    "useDebouncedValue",
+    "use-debounced-value"
   ],
   "files": [
     "dist",
@@ -34,8 +34,8 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test:unit": "tsdx test --passWithNoTests",
-    "test:e2e": "cypress run",
+    "test": "tsdx test --passWithNoTests",
+    "test:ci": "tsdx test --ci --coverage --verbose --maxWorkers=2",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
@@ -46,7 +46,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "tsdx lint --fix"
     }
   },
   "size-limit": [
@@ -60,21 +60,19 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^5.0.1",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/react-hooks": "^7.0.1",
-    "@testing-library/user-event": "^13.1.9",
-    "@types/react": "^17.0.14",
-    "@types/react-dom": "^17.0.9",
-    "cypress": "^7.7.0",
-    "husky": "^7.0.1",
-    "jest-fetch-mock": "^3.0.3",
+    "@size-limit/preset-small-lib": "^6.0.4",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/react": "^17.0.34",
+    "@types/react-dom": "^17.0.11",
+    "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "size-limit": "^5.0.1",
+    "size-limit": "^6.0.4",
+    "ts-jest": "^27.0.7",
     "tsdx": "^0.14.1",
-    "tslib": "^2.3.0",
+    "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   }
 }
