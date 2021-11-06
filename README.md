@@ -80,3 +80,14 @@ const debouncedSearchQuery = useDebouncedValue(searchQuery)
     > `T`
     >
     > Value that lazily update based on delay argument, default to `200` (in ms)
+
+### 👈 usePreviousValue
+```tsx
+const prevCount = usePrevious(count)
+```
+
+### Returns
+ - previousValue
+   > `T`
+   >
+   > The prevous value of every render, possibly undefined at first
