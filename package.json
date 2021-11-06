@@ -15,7 +15,11 @@
     "react-hooks",
     "hooks",
     "useToggle",
-    "use-toggle"
+    "use-toggle",
+    "useSafeUpdate",
+    "use-safe-update",
+    "useDebouncedValue",
+    "use-debounced-value"
   ],
   "files": [
     "dist",
