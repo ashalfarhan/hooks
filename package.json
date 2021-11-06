@@ -35,7 +35,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "test:ci": "tsdx test --ci --coverage --verbose",
+    "test:ci": "tsdx test --ci --coverage --verbose --maxWorkers=2",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
     "size": "size-limit",
