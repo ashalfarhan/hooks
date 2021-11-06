@@ -16,7 +16,7 @@ export function useToggle(initial = false) {
   const [state, setState] = useState(initial);
 
   const onToggle = () => {
-    setState(prev => !prev);
+    setState((prev) => !prev);
   };
 
   const onOpen = () => {
